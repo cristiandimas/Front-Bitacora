@@ -1,0 +1,77 @@
+.form__container{
+  position: fixed;
+  width: 100%;  
+  min-height: 100vh;
+  background-color: #0004;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(7px);
+  
+  }
+.form{
+  width: 100%;
+  max-width: 500px;
+  padding:  1em 1.5em;  
+  background-color: white;
+  position: relative;
+  border-radius: 5px;
+}
+.form_x{
+  position: absolute;
+  right: 1em;
+  font-size: 1.2em;
+  color: rgb(235, 29, 29);
+  top: 0.8em;
+  cursor: pointer;
+  transition: transform 100ms ease;
+}
+.form_x:hover{
+  transform: scale(1.2);
+}
+
+.form__title{
+  margin-bottom: .1em;
+}
+.form__div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: .1em;
+  margin-bottom: .4em;
+}
+
+
+
+.form__label{
+  font-weight: 100;
+  font-size: .8em;
+}
+
+.form__input, select{
+  padding: .5em .8em;
+  border-radius: .5em;
+  border: solid 1px #aaaa;
+  font-size: .7em;
+}
+
+.form__button{
+  width: 100%;
+  padding: .6em;
+  color: white;
+  background-color: #555A88;
+  margin: 1px;
+  border-radius: 8px;
+  font-size: .6em;
+  transition: filter 100ms ease;  
+}
+
+.form__button:hover{
+  filter: brightness(1.2);
+}
+
+.close__form {
+  visibility: hidden;
+}
