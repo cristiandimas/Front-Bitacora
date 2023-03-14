@@ -37,7 +37,7 @@ const FormReport = ({ reportLive, setReportLive, client, setCloseForm }) => {
         console.log(data);
 
       }).catch((err) => {
-        console.log(data);
+        console.log(err);
 
       });
   }
