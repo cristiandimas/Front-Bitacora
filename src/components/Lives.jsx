@@ -10,9 +10,11 @@ const Lives = ({ client }) => {
 
   useEffect(() => {
     const URL = `https://platform.mediastre.am/api/live-stream?token=${client?.tk}`
+   if (client) {
     axios.get(URL)
-      .then((res) => setLives(res.data.data))
-      .catch((err) => console.log(err));
+    .then((res) => {setLives(res.data.data), console.log('hola');})
+    .catch((err) => console.log(lives));
+   }
   }, [client])
 
 

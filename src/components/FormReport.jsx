@@ -31,7 +31,10 @@ const FormReport = ({ reportLive, setReportLive, client, setCloseForm }) => {
   }
 
   const sendReport = (data) => {
-    const URL = 'https://bitacora-production.up.railway.app/api/reportes'
+    data.nombreLive = reportLive?.name
+    data.idLive = reportLive?.id
+    data.cliente = client?.id
+    const URL = 'https://bitacora-production.up.railway.app/api/reporte'
     axios.post(URL, data)
       .then((res) => {
         console.log(data);
@@ -42,14 +45,14 @@ const FormReport = ({ reportLive, setReportLive, client, setCloseForm }) => {
       });
   }
 
-  const idioms = [{id: 0,nombre: 'Spanish'}, { id: 1, nombre: 'English' }]
+  const idioms = [{ id: 0, nombre: 'Spanish' }, { id: 1, nombre: 'English' }]
 
 
 
 
   return (
     <div>
-      <form className='form' onSubmit={handleSubmit(sendReport)}>
+      <form className='form' >
         <div className='form_x' onClick={handleSubmit(clearForm)}>x</div>
         <h2 className='form__title'>Reporte de incidencias</h2>
 
@@ -112,7 +115,7 @@ const FormReport = ({ reportLive, setReportLive, client, setCloseForm }) => {
           </select>
 
         </div>
-        <button className='form__button'>Reportar</button>
+        <button className='form__button'onClick={handleSubmit(sendReport)}>Reportar</button>
       </form>
     </div>
   )
